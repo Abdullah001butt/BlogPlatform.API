@@ -8,7 +8,8 @@ namespace BlogPlatform.Context.DependencyInjection
     {
         public static IServiceCollection AddContextRegistration(this IServiceCollection services, IConfiguration config)
         {
-            services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(config.GetConnectionString("Default")));
+            services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
             return services;
         }
     }
